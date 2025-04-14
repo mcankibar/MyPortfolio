@@ -1,0 +1,23 @@
+﻿@using MyPortfolio.Dal.Entities
+
+@model List<Skill>
+
+
+
+
+<div class="col-six tab-full right">
+    <h3>I've Got Some skills.</h3>
+
+    <ul class="skill-bars">
+        @foreach(var item in Model){
+            string value = "progress percent" + item.Value;
+            value = value.Trim();
+            <li>
+                <div class="@value"><span>@item.Value%</span></div>
+                <strong>@item.Title</strong>
+            </li>
+        }
+        
+        
+    </ul>
+</div>
